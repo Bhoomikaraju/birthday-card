@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Dee</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: #f8f1e7; 
+        color: black;
+        overflow-x: hidden;
+    }
+
+    /* ========== FULL SCREEN ENVELOPE ========== */
+    #envelope-section {
+        width: 100vw;
+        height: 100vh;
+        background: #f8f1e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .envelope {
+        width: 92vw;
+        max-width: 420px;
+        aspect-ratio: 1 / 0.7;
+        position: relative;
+    }
+
+    .envelope-body {
+        width: 100%;
+        height: 100%;
+        background: #ead9c9;
+        border-radius: 12px;
+        position: absolute;
+        bottom: 0;
+        box-shadow: 0 0 14px rgba(0,0,0,0.25);
+        z-index: 1;
+    }
+
+    .envelope-flap {
+        width: 100%;
+        height: 100%;
+        background: #e2c7b3;
+        border-radius: 12px 12px 0 0;
+        position: absolute;
+        top: 0;
+        transform-origin: top;
+        transform: rotateX(0deg);
+        transition: transform 1s ease-in-out;
+        z-index: 2;
+    }
+
+    #open-btn {
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 13px 26px;
+        border: none;
+        background: #d7b7a2;
+        color: black;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    /* ========== PAGES ========== */
+    .page {
+        display: none;
+        padding: 20px;
+        animation: fadeIn 1s ease forwards;
+        text-align: center;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to   {opacity: 1;}
+    }
+
+    .turn {
+        animation: turnPage 0.7s ease forwards;
+    }
+
+    @keyframes turnPage {
+        from {transform: rotateY(70deg); opacity: 0;}
+        to   {transform: rotateY(0deg); opacity: 1;}
+    }
+
+    /* ========== POLAROID FRAMES ========== */
+    .polaroid {
+        width: 260px;
+        padding: 10px;
+        background: white;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        animation: popIn 0.7s ease;
+    }
+
+    .polaroid img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .caption {
+        margin-top: 6px;
+        font-style: italic;
+        font-size: 14px;
+    }
+
+    @keyframes popIn {
+        from {opacity: 0; transform: scale(0.5);}
+        to   {opacity: 1; transform: scale(1);}
+    }
+
+    /* ========== BUTTON STYLE ========== */
+    button {
+        padding: 12px 26px;
+        border: none;
+        background: #d7b7a2;
+        color: black;
+        border-radius: 10px;
+        font-size: 17px;
+        margin: 20px 0;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #c9a68e;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ========== BACKGROUND MUSIC ========== -->
+<audio id="bgmusic" src="C:\Users\DORA\OneDrive\Desktop\DEE10.ogg" autoplay loop></audio>
+
+<!-- ========== FULL SCREEN ENVELOPE ========== -->
+<div id="envelope-section">
+    <div class="envelope">
+        <div class="envelope-flap" id="flap"></div>
+        <div class="envelope-body"></div>
+        <button id="open-btn">OPEN HERE</button>
+    </div>
+</div>
+
+<!-- ========== PAGE 1 : POLAROID PAGE ========== -->
+<div id="page1" class="page">
+
+    <h1>🎉 Happy Birthday Dee 🎉</h1>
+    <p>WRITE ME A THANK YOU LETTER AFTER THIS</p>
+
+    <!-- 5 Polaroid photos -->
+    <div class="polaroid">
+        <img src="C:\Users\DORA\OneDrive\Desktop\dee6.jpeg">
+<div class="caption">MAIN CHARACTER ENERGY</div>
+</div>
+
+   <div class="polaroid">
+        <img src="C:\Users\DORA\OneDrive\Desktop\dee2.jpeg">
+        <div class="caption">BEST FRIEND</div>
+
+    </div>   
+   
+    <div class="polaroid">
+        <img src="C:\Users\DORA\OneDrive\Desktop\dee4.jpeg">
+        <div class="caption">KOLI MARI</div>
+
+    </div>
+
+
+
+    <div class="polaroid">
+        <img src="C:\Users\DORA\OneDrive\Desktop\dee1.jpeg">
+        <div class="caption">MODEL</div>
+    
+ </div>
+
+    <div class="polaroid">
+        <img src="C:\Users\DORA\OneDrive\Desktop\dee5.jpeg">
+        <div class="caption">MINI KJ</div>
+
+    </div>
+
+    <!-- GIF Polaroid -->
+    <div class="polaroid">
+        <img src="C:\Users\DORA\OneDrive\Desktop\dee3.jpeg">
+        <div class="caption">CUTE HEADACHE</div>
+
+    </div>
+
+    <!-- U-TURN 21 BUTTON -->
+    <button onclick="goToPage2()">YOU TURN 22 ➡️</button>
+
+</div>
+
+<!-- ========== PAGE 2 : LETTER PAGE ========== -->
+<div id="page2" class="page">
+    <h2>Your Birthday Letter</h2>
+
+    <p style="max-width: 500px; margin: auto; line-height: 1.7;">
+        HAPPY 22 DEE!Yappa en heli nin bagge!ondh horrible female  ninu.Thank you for always beign there for me.Nin thumba patience inda nanna handle madthya. Nan kopadalli ene andru forgive maadhtya.Best decision andre project team change madkondidhu estu smooth aagi aithu ansthidhe allaa??Estu maja madidhivi ! Nin inna nange Corn madkottilla!Nin yavaglu heege kushi kushi yaagiru!Nin ankondidhellaa aagli!Bili ganda sigliii!Nan madve du event management ningee! Thank me for tolerating your ego!Mundhakku jagla adthiru illandre nange bore aguthe!Nin life est chennagidhe alvaa nanninda ninge full entertainment! We fight like we dont care for each other but i like the way we both stick together after the fight!Heege irli nam bonddd no nazar!I love youuuu!!
+    </p>
+</div>
+
+<script>
+/* Envelope opening */
+document.getElementById("open-btn").onclick = function() {
+    document.getElementById("bgmusic").play();
+    document.getElementById("flap").style.transform = "rotateX(-120deg)";
+
+    setTimeout(() => {
+        document.getElementById("envelope-section").style.display = "none";
+        document.getElementById("page1").style.display = "block";
+        document.getElementById("page1").classList.add("turn");
+    }, 1100);
+};
+
+/* Move to letter page */
+function goToPage2() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+    document.getElementById("page2").classList.add("turn");
+}
+</script>
+
+</body>
+</html>
